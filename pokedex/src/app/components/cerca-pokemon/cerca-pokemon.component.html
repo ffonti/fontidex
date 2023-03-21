@@ -2,20 +2,43 @@
   <div class="grid grid-cols-5">
     <div class="col-span-2"></div>
     <div class="justify-self-center">
-      <input 
-        class="mt-10 shadow appearance-none border rounded w-72 py-2 px-3 text-gray-700 leading-tight focus:outline-none" 
-        type="text" 
+      <input
+        class="mt-10 shadow appearance-none border rounded w-72 py-2 px-3 text-gray-700 leading-tight focus:outline-none"
+        type="text"
         required
         [(ngModel)]="nomeInput"
-        placeholder="Cerca per nome"/>
+        placeholder="Cerca per nome"
+      />
     </div>
     <div>
-      <button class="mt-9" type="submit" (click)="submit()">
-        <img 
-        src="../../../assets/images/icon.svg" 
-        class="h-12 cursor-pointer" 
-        alt="Homepage"/>
+      <button class="mt-9 md:ml-16" type="submit" (click)="submit()">
+        <img
+          src="../../../assets/images/icon.svg"
+          class="h-12 cursor-pointer"
+          alt="Homepage"
+        />
       </button>
+    </div>
+  </div>
+</div>
+<div *ngIf="pokemon">
+  <div
+    class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+  >
+    <img
+      class="rounded-t-lg"
+      src="{{ pokemon.sprites.front_default }}"
+      alt=""
+    />
+    <div class="p-5">
+      <h5
+        class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+      >
+        {{ pokemon.name | titlecase}}
+      </h5>
+      <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 uppercase" *ngFor="let type of pokemon.types">
+        {{ type.type.name }}
+      </p>
     </div>
   </div>
 </div>

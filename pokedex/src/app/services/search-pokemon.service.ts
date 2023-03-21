@@ -6,7 +6,7 @@ import { catchError, Observable, throwError } from 'rxjs';
   providedIn: 'root',
 })
 export class SearchPokemonService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   url: string = 'https://pokeapi.co/api/v2/pokemon/';
 
