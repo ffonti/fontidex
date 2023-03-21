@@ -1,15 +1,20 @@
 <div id="main" class="grid">
-    <img 
-    src="../../../assets/images/pokédex.png" 
-    alt="Logo pokédex"
-    class="h-24 justify-self-center mt-32"/>
-    <p class="text-lg justify-self-center mt-8">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium ipsa blanditiis eaque sapiente placeat, perspiciatis laudantium quisquam quasi. Esse consectetur doloribus itaque cupiditate, provident non temporibus nulla omnis repellat!
-        Nihil nesciunt, adipisci necessitatibus quibusdam quam a omnis, saepe officia explicabo obcaecati expedita ea provident commodi ducimus rem facilis velit culpa quidem corporis. Illo dolorem placeat, vero autem assumenda quibusdam.
-        Doloremque error ratione culpa magni, tempora voluptate in nemo temporibus reiciendis minima vero perferendis sed laudantium expedita natus ipsa tenetur eveniet alias odio quisquam nesciunt officia officiis! Impedit, natus mollitia.
+    <div class="mt-16 grid lg:grid-cols-3 md:justify-self-center">
+        <div></div>
+        <h1 class="text-6xl mt-5">Benveuto!</h1>
+        <img 
+            src="../../../assets/images/hello-pikachu.gif" 
+            alt="Gif Pikachu"
+            class="h-24 md:mt-5 md:justify-self-center"/>
+    </div>
+    <p class="text-lg justify-self-center mt-12 text-justify">
+        Tramite i pulsanti qui sotto, è possibile cercare un Pokémon tramite il nome o l'id, oppure generare un Pokémon random e visualizzarne tutti i dati: immagine, tipo, stats, etc.
+    </p>
+    <p class="text-m justify-self-center mt-2 text-justify">
+        (Mini tip: per tornare alla homepage basta cliccare sulla pokéball che comparirà in alto a sinistra!)
     </p>
     <div class="justify-self-center space-x-28 mt-14">
-        <button routerLink="/cercaPokemon" class="btn btn-blue">Cerca Pokémon</button>
-        <button routerLink="/cercaPokemon" class="btn btn-blue">Pokémon random</button>
+        <button routerLink="/cercaPokemon" class="btn">Cerca Pokémon</button>
+        <button routerLink="/cercaPokemon" class="btn">Pokémon random</button>
     </div>
 </div>

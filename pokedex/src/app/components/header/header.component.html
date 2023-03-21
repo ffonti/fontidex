@@ -1,11 +1,14 @@
-<div class="bg-red-600 h-14 sticky top-0 grid grid-cols-3">
+<div class="bg-red-600 h-16 sticky top-0 grid grid-cols-3">
     <div>
         <img 
-            *ngIf="isNotHomePage()"
-            src="../../../assets/images/icon.svg" 
-            class="mt-1 ml-2 h-12 self-center cursor-pointer" 
-            alt="Homepage"
-            routerLink="/"/>
+        *ngIf="isNotHomePage()"
+        src="../../../assets/images/icon.svg" 
+        class="ml-2 h-12 mt-2 cursor-pointer" 
+        alt="Homepage"
+        routerLink="/"/>
     </div>
-    <h1 class="justify-self-center self-center text-3xl">Pokédex</h1>
+    <img 
+        src="../../../assets/images/pokédex.png" 
+        class="h-14 self-center justify-self-center"
+        alt="Logo Pokédex"/>
 </div>

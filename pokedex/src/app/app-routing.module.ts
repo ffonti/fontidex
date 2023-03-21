@@ -6,7 +6,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 
 const routes: Routes = [
   { path: 'cercaPokemon', component: CercaPokemonComponent },
-  { path: '', component: HomepageComponent, pathMatch: 'full' }, //Default route
+  { path: 'homePage', component: HomepageComponent },
+  { path: '', redirectTo: 'homePage', pathMatch: 'full' }, //Default route
 	{ path: '**', component: PageNotFoundComponent } //Errore, pagina non trovata
 ];
 
