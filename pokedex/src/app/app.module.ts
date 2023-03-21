@@ -10,21 +10,24 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { CercaPokemonComponent } from './components/cerca-pokemon/cerca-pokemon.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     PageNotFoundComponent,
     CercaPokemonComponent,
-    HomepageComponent
+    HomepageComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    CommonModule
+    CommonModule,
+    HttpClientModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [HttpClientModule],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
