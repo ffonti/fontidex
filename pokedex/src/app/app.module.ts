@@ -10,7 +10,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { CercaPokemonComponent } from './components/cerca-pokemon/cerca-pokemon.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
