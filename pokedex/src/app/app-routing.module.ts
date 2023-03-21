@@ -8,11 +8,11 @@ const routes: Routes = [
   { path: 'cercaPokemon', component: CercaPokemonComponent },
   { path: 'homePage', component: HomepageComponent },
   { path: '', redirectTo: 'homePage', pathMatch: 'full' }, //Default route
-	{ path: '**', component: PageNotFoundComponent } //Errore, pagina non trovata
+  { path: '**', component: PageNotFoundComponent }, //Errore, pagina non trovata
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

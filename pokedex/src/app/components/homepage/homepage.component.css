@@ -1,26 +1,26 @@
 #main {
-    margin-left: 20%;
-    margin-right: 20%;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
 .btn {
-    @apply font-bold py-2 px-4 rounded text-white;
-    background-color: #312E91;
-};
+  @apply font-bold py-2 px-4 rounded text-white;
+  background-color: #312e91;
+}
 
 .btn:hover {
-    @apply bg-blue-800;
-};
+  @apply bg-blue-800;
+}
 
 h1 {
-    @apply font-bold;
-    color: #312E91;
-    text-shadow: 0 0 3px #e1bc29;
-};
+  @apply font-bold;
+  color: #312e91;
+  text-shadow: 0 0 3px #e1bc29;
+}
 
 @media (max-width: 1080px) {
-    #main {
-        margin-left: 10%;
-        margin-right: 10%;
-    }
+  #main {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
 }

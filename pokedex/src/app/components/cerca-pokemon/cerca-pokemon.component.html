@@ -13,7 +13,7 @@
     <div>
       <button class="mt-9 md:ml-16" type="submit" (click)="submit()">
         <img
-          src="../../../assets/images/icon.svg"
+          src="../../../assets/images/icon.png"
           class="h-12 cursor-pointer"
           alt="Homepage"
         />
@@ -21,9 +21,9 @@
     </div>
   </div>
 </div>
-<div *ngIf="pokemon">
+<div class="grid grid-cols-2 space-x-5" *ngIf="pokemon; else notPokemon">
   <div
-    class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+    class="w-64 bg-white border-gray-200 rounded-lg shadow dark:bg-gray-200 dark:border-gray-100 justify-self-end"
   >
     <img
       class="rounded-t-lg"
@@ -32,13 +32,61 @@
     />
     <div class="p-5">
       <h5
-        class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+        class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-black"
       >
-        {{ pokemon.name | titlecase}}
+        {{ pokemon.name | titlecase }}
       </h5>
-      <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 uppercase" *ngFor="let type of pokemon.types">
+      <p
+        class="font-normal text-gray-700 dark:text-gray-400 uppercase"
+        *ngFor="let type of pokemon.types"
+      >
         {{ type.type.name }}
       </p>
     </div>
   </div>
+  <div
+    class="max-w-sm bg-white border-gray-200 rounded-lg shadow dark:bg-gray-200 dark:border-gray-100 w-64"
+  >
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+    </ul>
+  </div>
 </div>
+<ng-template #notPokemon>
+  <p>Inserire il nome di un Pokémon per visualizzarne i dati!</p>
+</ng-template>
+<!-- <div class="grid grid-cols-2 space-x-5">
+  <div
+    class="w-64 bg-white border-gray-200 rounded-lg shadow dark:bg-gray-200 dark:border-gray-100 justify-self-end"
+  >
+    <img
+      class="rounded-t-lg"
+      src="../../../assets/images/hello-pikachu.gif"
+      alt=""
+    />
+    <div class="p-5">
+      <h5
+        class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-black"
+      >
+        Pokemon
+      </h5>
+      <p class="font-normal text-gray-700 dark:text-gray-400 uppercase">
+        tipo 1
+      </p>
+      <p class="font-normal text-gray-700 dark:text-gray-400 uppercase">
+        tipo 1
+      </p>
+    </div>
+  </div>
+  <div
+    class="max-w-sm bg-white border-gray-200 rounded-lg shadow dark:bg-gray-200 dark:border-gray-100 w-64"
+  >
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+    </ul>
+  </div>
+</div> -->
