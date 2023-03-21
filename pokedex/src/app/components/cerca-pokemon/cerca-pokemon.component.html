@@ -2,10 +2,15 @@
   <div class="grid grid-cols-5">
     <div class="col-span-2"></div>
     <div class="justify-self-center">
-      <input class="mt-10 shadow appearance-none border rounded w-72 py-2 px-3 text-gray-700 leading-tight focus:outline-none" id="input" type="text" placeholder="Nome o ID">
+      <input 
+        class="mt-10 shadow appearance-none border rounded w-72 py-2 px-3 text-gray-700 leading-tight focus:outline-none" 
+        type="text" 
+        required
+        [(ngModel)]="nomeInput"
+        placeholder="Cerca per nome"/>
     </div>
     <div>
-      <button class="mt-9">
+      <button class="mt-9" type="submit" (click)="submit()">
         <img 
         src="../../../assets/images/icon.svg" 
         class="h-12 cursor-pointer" 
