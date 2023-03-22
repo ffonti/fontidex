@@ -12,6 +12,7 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { PokemonDetailsComponent } from './components/pokemon-details/pokemon-details.component';
+import { AlertComponent } from './components/alert/alert.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { PokemonDetailsComponent } from './components/pokemon-details/pokemon-de
     CercaPokemonComponent,
     HomepageComponent,
     PokemonDetailsComponent,
+    AlertComponent,
   ],
   imports: [
     BrowserModule,

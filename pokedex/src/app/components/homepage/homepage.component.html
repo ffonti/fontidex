@@ -18,7 +18,9 @@
     comparirà in alto a sinistra!)
   </p>
   <div class="justify-self-center space-x-28 mt-14">
-    <button routerLink="/cercaPokemon" class="btn">Cerca Pokémon</button>
+    <button routerLink="/cercaPokemon" (click)="cercaPokemon()" class="btn">
+      Cerca Pokémon
+    </button>
     <button routerLink="/cercaPokemon" (click)="submit()" class="btn">
       Pokémon random
     </button>

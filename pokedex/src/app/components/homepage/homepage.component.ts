@@ -12,4 +12,8 @@ export class HomepageComponent {
   submit(): void {
     this.searchPokemonService.randomPokemon();
   }
+
+  cercaPokemon(): void {
+    this.searchPokemonService.cercaPokemon();
+  }
 }
