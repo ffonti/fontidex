@@ -8,10 +8,10 @@
       class="h-24 md:mt-5 md:justify-self-center"
     />
   </div>
-  <p class="text-lg justify-self-center mt-12 text-justify">
+  <p class="text-lg justify-self-center mt-12 text-center">
     Tramite i pulsanti qui sotto, è possibile cercare un Pokémon tramite il nome
-    o l'id, oppure generare un Pokémon random e visualizzarne tutti i dati:
-    immagine, tipo, stats, etc.
+    oppure generare un Pokémon random e visualizzarne alcuni dati: immagine,
+    tipo, stats, etc.
   </p>
   <p class="text-m justify-self-center mt-2 text-justify">
     (Mini tip: per tornare alla homepage basta cliccare sulla pokéball che
@@ -19,6 +19,8 @@
   </p>
   <div class="justify-self-center space-x-28 mt-14">
     <button routerLink="/cercaPokemon" class="btn">Cerca Pokémon</button>
-    <button routerLink="/cercaPokemon" class="btn">Pokémon random</button>
+    <button routerLink="/cercaPokemon" (click)="submit()" class="btn">
+      Pokémon random
+    </button>
   </div>
 </div>

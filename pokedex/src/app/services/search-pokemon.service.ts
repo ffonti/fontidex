@@ -10,6 +10,8 @@ export class SearchPokemonService {
 
   url: string = 'https://pokeapi.co/api/v2/pokemon/';
   is404: boolean = false;
+  id: number = 0;
+  pkmnRnd?: Observable<any>;
 
   getPokemon(nome: string): Observable<any> {
     return this.http
@@ -21,5 +23,10 @@ export class SearchPokemonService {
           return throwError(() => new Error(err));
         })
       );
+  }
+
+  randomPokemon(): void {
+    this.id = Math.floor(Math.random() * 1008);
+    this.pkmnRnd = this.http.get(this.url + this.id, { observe: 'response' });
   }
 }
