@@ -13,6 +13,7 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PokemonDetailsComponent } from './components/pokemon-details/pokemon-details.component';
 import { AlertComponent } from './components/alert/alert.component';
+import { LolComponent } from './components/lol/lol.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { AlertComponent } from './components/alert/alert.component';
     HomepageComponent,
     PokemonDetailsComponent,
     AlertComponent,
+    LolComponent,
   ],
   imports: [
     BrowserModule,

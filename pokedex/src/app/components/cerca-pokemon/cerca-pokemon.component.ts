@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ChangeRouteService } from 'src/app/services/change-route.service';
 import { SearchPokemonService } from 'src/app/services/search-pokemon.service';
 
 @Component({
@@ -7,7 +8,10 @@ import { SearchPokemonService } from 'src/app/services/search-pokemon.service';
   styleUrls: ['./cerca-pokemon.component.css'],
 })
 export class CercaPokemonComponent implements OnInit {
-  constructor(private searchPokemonService: SearchPokemonService) {}
+  constructor(
+    private searchPokemonService: SearchPokemonService,
+    private changeRouteService: ChangeRouteService
+  ) {}
 
   nomeInput: string = '';
   id: number = this.searchPokemonService.id;
@@ -35,6 +39,10 @@ export class CercaPokemonComponent implements OnInit {
         );
       this.nomeInput = '';
     }
+  }
+
+  detail(pokemon: any): void {
+    this.changeRouteService.setPokemon(pokemon);
   }
 
   ngOnInit(): void {

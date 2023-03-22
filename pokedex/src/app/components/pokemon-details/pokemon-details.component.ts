@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ChangeRouteService } from 'src/app/services/change-route.service';
 
 @Component({
@@ -7,13 +8,19 @@ import { ChangeRouteService } from 'src/app/services/change-route.service';
   styleUrls: ['./pokemon-details.component.css'],
 })
 export class PokemonDetailsComponent implements OnInit, OnDestroy {
-  constructor(private changeRouteService: ChangeRouteService) {}
+  pokemon: any;
+
+  constructor(
+    private changeRouteService: ChangeRouteService,
+    private router: Router
+  ) {}
 
   ngOnDestroy(): void {
     this.changeRouteService.isDetailPage = false;
   }
 
   ngOnInit(): void {
+    this.pokemon = this.changeRouteService.pokemon;
     this.changeRouteService.isDetailPage = true;
   }
 }

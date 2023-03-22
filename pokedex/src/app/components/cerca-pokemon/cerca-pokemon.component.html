@@ -30,6 +30,7 @@
         [src]="pokemon.sprites.front_default"
         [alt]="(pokemon.name | titlecase) + 'img'"
         [routerLink]="'/details/' + pokemon.id"
+        (click)="detail(pokemon)"
       />
       <div class="p-5">
         <h5

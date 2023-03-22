@@ -1,1 +1,91 @@
-<p>pokemon-details works!</p>
+<!-- 
+    OK nome
+    OK id
+    OK img 4: front default, front female, front shiny, front shiny female
+    abilità (solo la prima)
+    altezza
+    peso
+    mosse apprese (salendo di livello)
+    stats: hp, attack, defense, special-attack, special-defense, speed
+    tipi
+ -->
+
+<div>
+  <h1 class="text-3xl font-bold text-center mt-5">
+    {{ pokemon.name | titlecase }} #{{ pokemon.id }}
+  </h1>
+  <div class="justify-items-center mt-5 space-x-5 grid grid-cols-4">
+    <ng-container *ngIf="pokemon.sprites.front_default">
+      <div
+        class="block w-80 h-60 rounded-lg bg-white shadow-lg text-center md:col-span-2 lg:col-span-1"
+      >
+        <img
+          class="rounded-t-lg w-40 mt-3"
+          [src]="pokemon.sprites.front_default"
+          alt=""
+        />
+        <div class="p-6">
+          <h5
+            class="mb-2 text-xl font-medium leading-tight text-neutral-800 text-center"
+          >
+            Maschio
+          </h5>
+        </div>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="pokemon.sprites.front_female">
+      <div
+        class="block w-80 h-60 rounded-lg bg-white shadow-lg text-center md:col-span-2 lg:col-span-1"
+      >
+        <img
+          class="rounded-t-lg w-40 mt-3"
+          [src]="pokemon.sprites.front_female"
+          alt=""
+        />
+        <div class="p-6">
+          <h5
+            class="mb-2 text-xl font-medium leading-tight text-neutral-800 text-center"
+          >
+            Femmina
+          </h5>
+        </div>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="pokemon.sprites.front_shiny">
+      <div
+        class="block w-80 h-60 rounded-lg bg-white shadow-lg text-center md:col-span-2 lg:col-span-1"
+      >
+        <img
+          class="rounded-t-lg w-40 mt-3"
+          [src]="pokemon.sprites.front_shiny"
+          alt=""
+        />
+        <div class="p-6">
+          <h5
+            class="mb-2 text-xl font-medium leading-tight text-neutral-800 text-center"
+          >
+            Maschio shiny
+          </h5>
+        </div>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="pokemon.sprites.front_shiny_female">
+      <div
+        class="block w-80 h-60 rounded-lg bg-white shadow-lg text-center md:col-span-2 lg:col-span-1"
+      >
+        <img
+          class="rounded-t-lg w-40 mt-3"
+          [src]="pokemon.sprites.front_shiny_female"
+          alt=""
+        />
+        <div class="p-6">
+          <h5
+            class="mb-2 text-xl font-medium leading-tight text-neutral-800 text-center"
+          >
+            Femmina shiny
+          </h5>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>
