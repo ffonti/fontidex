@@ -5,7 +5,7 @@
       src="../../../assets/images/icon.png"
       class="ml-2 h-12 mt-2 cursor-pointer"
       alt="Homepage"
-      routerLink="/"
+      [routerLink]="isDetailsPage() ? ['/cercaPokemon'] : ['/homePage']"
     />
   </div>
   <img

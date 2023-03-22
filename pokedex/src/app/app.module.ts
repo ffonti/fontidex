@@ -11,6 +11,7 @@ import { CercaPokemonComponent } from './components/cerca-pokemon/cerca-pokemon.
 import { HomepageComponent } from './components/homepage/homepage.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { PokemonDetailsComponent } from './components/pokemon-details/pokemon-details.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
     PageNotFoundComponent,
     CercaPokemonComponent,
     HomepageComponent,
+    PokemonDetailsComponent,
   ],
   imports: [
     BrowserModule,

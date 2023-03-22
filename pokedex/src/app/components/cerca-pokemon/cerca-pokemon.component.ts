@@ -12,16 +12,23 @@ export class CercaPokemonComponent implements OnInit {
   nomeInput: string = '';
 
   is404: boolean = this.searchPokemonService.is404;
+  campoVuoto: string = '';
   id: number = this.searchPokemonService.id;
   pokemon: any;
 
   submit(): void {
-    this.pokemon = this.searchPokemonService
-      .getPokemon(this.nomeInput)
-      .subscribe((pkmn) => {
-        this.pokemon = pkmn.body;
-        console.log(this.pokemon);
-      });
+    if (this.nomeInput.trim() === '') {
+      this.nomeInput = '';
+      this.campoVuoto = "L'input non può essere vuoto!";
+    } else {
+      this.pokemon = this.searchPokemonService
+        .getPokemon(this.nomeInput.trim())
+        .subscribe((pkmn) => {
+          this.pokemon = pkmn.body;
+          console.log(this.pokemon);
+        });
+      this.nomeInput = '';
+    }
   }
 
   ngOnInit(): void {
