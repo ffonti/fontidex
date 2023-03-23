@@ -42,7 +42,9 @@ o provarla in modalità dev, seguendo la sezione <a href="#installazione">Instal
 
 ## Prerequisiti
 
-- Nessuno
+- Node.js
+- Git Cli
+- Angular Cli
 
 ## Installazione
 
