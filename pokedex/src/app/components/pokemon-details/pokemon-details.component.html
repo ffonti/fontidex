@@ -7,10 +7,10 @@ scroll window mostra mosse -->
     <h1 class="text-3xl font-bold text-center mt-5">
       {{ pokemon.name.replace("-", " ") | titlecase }} #{{ pokemon.id }}
     </h1>
-    <div class="mt-5 md:space-y-3 grid grid-cols-4">
+    <div class="mt-5 md:space-y-3 flex justify-center">
       <ng-container *ngIf="pokemon.sprites.front_default">
         <div
-          class="md:mt-3 block w-60 h-60 rounded-lg bg-white shadow-lg text-center md:col-span-2 lg:col-span-1"
+          class="md:mt-3 mr-2 block w-60 h-60 rounded-lg bg-white shadow-lg text-center"
         >
           <img
             class="rounded-t-lg w-40 mt-3"
@@ -28,7 +28,7 @@ scroll window mostra mosse -->
       </ng-container>
       <ng-container *ngIf="pokemon.sprites.front_female">
         <div
-          class="block w-60 h-60 rounded-lg bg-white shadow-lg text-center md:col-span-2 lg:col-span-1"
+          class="lg:mr-1 block w-60 h-60 rounded-lg bg-white shadow-lg text-center"
         >
           <img
             class="rounded-t-lg w-40 mt-3"
@@ -46,7 +46,7 @@ scroll window mostra mosse -->
       </ng-container>
       <ng-container *ngIf="pokemon.sprites.front_shiny">
         <div
-          class="block w-60 h-60 rounded-lg bg-white shadow-lg text-center md:col-span-2 lg:col-span-1"
+          class="lg:ml-1 block w-60 h-60 rounded-lg bg-white shadow-lg text-center"
         >
           <img
             class="rounded-t-lg w-40 mt-3"
@@ -64,7 +64,7 @@ scroll window mostra mosse -->
       </ng-container>
       <ng-container *ngIf="pokemon.sprites.front_shiny_female">
         <div
-          class="mt-0 block w-60 h-60 rounded-lg bg-white shadow-lg text-center md:col-span-2 lg:col-span-1"
+          class="ml-2 mt-0 block w-60 h-60 rounded-lg bg-white shadow-lg text-center"
         >
           <img
             class="rounded-t-lg w-40 mt-3"
@@ -81,9 +81,9 @@ scroll window mostra mosse -->
         </div>
       </ng-container>
     </div>
-    <div class="grid grid-cols-2 space-x-5 mt-5">
+    <div class="mt-5 flex flex-wrap justify-center">
       <div
-        class="w-64 h-52 md:ml-3 bg-white border-gray-200 rounded-lg shadow justify-self-end"
+        class="w-64 h-58 md:ml-3 bg-white border-gray-200 rounded-lg shadow mr-3"
       >
         <ul>
           <li class="text-end mr-5 mt-3">
@@ -139,7 +139,7 @@ scroll window mostra mosse -->
           </li>
         </ul>
       </div>
-      <div class="max-w-sm bg-white border-gray-200 rounded-lg shadow w-64">
+      <div class="w-64 h-58 bg-white border-gray-200 rounded-lg shadow">
         <ul>
           <div *ngFor="let stat of pokemon.stats">
             <li class="text-end mr-5 mt-2">
