@@ -37,7 +37,7 @@ Per la creazione di Pokédex è utilizzata l' API omonima che fornisce tutte le 
 
 L'uso è semplice: è possibile ricercare un singolo pokémon, ricevendo le informazioni associate, o effettuare una ricerca per generazione.
 
-É possibile provare l'app in modalità produzione a questo link: https://eclectic-peony-865007.netlify.app/homePage
+É possibile provare l'app in modalità produzione a questo link: https://eclectic-peony-865007.netlify.app
 o provarla in modalità dev, seguendo la sezione <a href="#installazione">Installazione</a>
 
 ## Prerequisiti
