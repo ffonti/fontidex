@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PokemonDetailsComponent } from './components/pokemon-details/pokemon-details.component';
 import { AlertComponent } from './components/alert/alert.component';
 import { LolComponent } from './components/lol/lol.component';
+import { GenerationListComponent } from './components/generation-list/generation-list.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { LolComponent } from './components/lol/lol.component';
     PokemonDetailsComponent,
     AlertComponent,
     LolComponent,
+    GenerationListComponent,
   ],
   imports: [
     BrowserModule,

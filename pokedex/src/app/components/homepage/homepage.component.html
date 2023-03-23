@@ -1,7 +1,7 @@
 <div id="main" class="grid">
   <div class="mt-16 grid lg:grid-cols-3 md:justify-self-center">
     <div></div>
-    <h1 class="text-6xl mt-5">Benvenuto!</h1>
+    <h1 class="text-6xl mt-10">Benvenuto!</h1>
     <img
       src="../../../assets/images/hello-pikachu.gif"
       alt="Gif Pikachu"
@@ -10,8 +10,9 @@
   </div>
   <p class="text-lg justify-self-center mt-12 text-center">
     Tramite i pulsanti qui sotto, è possibile cercare un Pokémon tramite il nome
-    o l'id oppure generare un Pokémon random e visualizzarne alcuni dati:
-    immagine, tipo, stats, etc.
+    o l'id, generare un Pokémon random e visualizzarne alcuni dati (immagine,
+    tipo, stats, ect.) oppure visualizzare tutti i pokemon di una data
+    generazione.
   </p>
   <p class="text-m justify-self-center mt-2 text-justify">
     (Mini tip: per tornare alla homepage basta cliccare sulla pokéball che
@@ -23,6 +24,9 @@
     </button>
     <button routerLink="/cercaPokemon" (click)="submit()" class="btn">
       Pokémon random
+    </button>
+    <button routerLink="/generationList" (click)="submit()" class="btn">
+      Cerca Generazione
     </button>
   </div>
 </div>
