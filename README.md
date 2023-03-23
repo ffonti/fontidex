@@ -7,7 +7,7 @@
   <h3 align="center">Pokédex</h3>
 
   <p align="center">
-    Pokédex è una single page application creata con lo scopo di dare emulare le funzionalità del famoso pokedex del brand videoludico Pokémon.
+    Pokédex è una single page application creata con lo scopo di emulare le funzionalità del famoso pokedex del brand videoludico Pokémon.
   </p>
 </p>
 
