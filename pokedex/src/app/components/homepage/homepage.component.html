@@ -1,7 +1,7 @@
-<div id="main" class="grid">
+<div id="main">
   <div class="mt-16 grid lg:grid-cols-3 md:justify-self-center">
     <div></div>
-    <h1 class="text-6xl mt-10">Benvenuto!</h1>
+    <h1 class="text-6xl mt-10 lg:ml-0 md:ml-36">Benvenuto!</h1>
     <img
       src="../../../assets/images/hello-pikachu.gif"
       alt="Gif Pikachu"
@@ -14,14 +14,18 @@
     tipo, stats, ect.) oppure visualizzare tutti i pokemon di una data
     generazione.
   </p>
-  <p class="text-m justify-self-center mt-2 text-justify">
+  <p class="text-m justify-self-center mt-2 text-justify md:text-center">
     (Mini tip: per tornare alla homepage basta cliccare sulla pokéball che
     comparirà in alto a sinistra!)
   </p>
   <div
-    class="justify-self-center space-x-28 mt-14 md:grid md:grid-cols-1 md:space-y-3"
+    class="lg:ml-20 justify-self-center mt-14 grid lg:grid-cols-3 md:ml-52 md:grid-cols-1 md:space-y-3"
   >
-    <button routerLink="/cercaPokemon" (click)="cercaPokemon()" class="btn">
+    <button
+      routerLink="/cercaPokemon"
+      (click)="cercaPokemon()"
+      class="btn mt-3"
+    >
       Cerca Pokémon
     </button>
     <button routerLink="/cercaPokemon" (click)="submit()" class="btn">

@@ -22,7 +22,7 @@
     </select>
   </div>
   <ng-container *ngIf="gen !== 0; else notGen">
-    <div class="grid grid-cols-8 mt-5 text-end mr-20">
+    <div class="grid lg:grid-cols-8 md:grid-cols-4 mt-5 text-end mr-20">
       <ng-container *ngFor="let pokemon of pokemons; let i = index">
         <p
           class="col-span-1 mt-3 cursor-pointer"
@@ -36,4 +36,5 @@
   <ng-template #notGen>
     <app-alert [msg]="msg"></app-alert>
   </ng-template>
+  <br />
 </div>

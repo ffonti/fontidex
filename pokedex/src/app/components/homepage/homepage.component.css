@@ -4,7 +4,7 @@
 }
 
 .btn {
-  @apply font-bold py-2 px-4 rounded text-white;
+  @apply font-bold py-2 px-4 w-56 h-10 rounded text-white;
   background-color: #312e91;
 }
 
