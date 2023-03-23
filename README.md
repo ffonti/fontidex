@@ -76,7 +76,7 @@ Distribuito con licenza MIT
 
 ## Contatti
 
-Link all'app: [Pokedex](https://pokedexgiacomoborsellino.netlify.app/)
+Link all'app: [Pokedex](https://eclectic-peony-865007.netlify.app/homePage)
 
 ## Crediti
 
