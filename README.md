@@ -1,7 +1,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/elizproject/projectPoke2">
-    <img src="https://github.com/elizproject/projectpoke/blob/main/pokedex/src/assets/images/pok%C3%A9dex.png" alt="Logo" width="200">
+    <img src="https://github.com/elizproject/projectpoke/blob/main/pokedex/src/assets/images/pok%C3%A9dex.png" alt="Logo" width="400">
   </a>
 
   <h3 align="center">Pokédex</h3>
