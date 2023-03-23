@@ -12,16 +12,19 @@
 
 <!-- come centrare gli sprites?
 come centrare due card quando non ce ne sono 4?
-non mi prende gli spazi laterali in % -->
+non mi prende gli spazi laterali in %
+scroll window mostra mosse -->
 
 <ng-container *ngIf="pokemon" name="top">
   <h1 class="text-3xl font-bold text-center mt-5">
     {{ pokemon.name.replace("-", " ") | titlecase }} #{{ pokemon.id }}
   </h1>
-  <div class="justify-items-center mt-5 space-x-5 grid grid-cols-4">
+  <div
+    class="justify-items-center mt-5 lg:space-x-5 md:space-y-3 grid grid-cols-4"
+  >
     <ng-container *ngIf="pokemon.sprites.front_default">
       <div
-        class="block w-80 h-60 rounded-lg bg-white shadow-lg text-center md:col-span-2 lg:col-span-1"
+        class="md:mt-3 block w-80 h-60 rounded-lg bg-white shadow-lg text-center md:col-span-2 lg:col-span-1"
       >
         <img
           class="rounded-t-lg w-40 mt-3"
@@ -75,7 +78,7 @@ non mi prende gli spazi laterali in % -->
     </ng-container>
     <ng-container *ngIf="pokemon.sprites.front_shiny_female">
       <div
-        class="block w-80 h-60 rounded-lg bg-white shadow-lg text-center md:col-span-2 lg:col-span-1"
+        class="mt-0 block w-80 h-60 rounded-lg bg-white shadow-lg text-center md:col-span-2 lg:col-span-1"
       >
         <img
           class="rounded-t-lg w-40 mt-3"
@@ -94,7 +97,7 @@ non mi prende gli spazi laterali in % -->
   </div>
   <div class="grid grid-cols-2 space-x-5 mt-5">
     <div
-      class="w-64 bg-white border-gray-200 rounded-lg shadow justify-self-end"
+      class="w-64 h-52 md:ml-3 bg-white border-gray-200 rounded-lg shadow justify-self-end"
     >
       <ul>
         <li class="text-end mr-5 mt-3">
@@ -172,7 +175,7 @@ non mi prende gli spazi laterali in % -->
   </div>
   <div class="text-center mt-5">
     <button (click)="showMosse()" class="btn">
-      Mosse apprese salendo di livello
+      {{ !mosse ? "Mostra" : "Nascondi" }} le mosse apprese salendo di livello
     </button>
     <ng-container *ngIf="mosse">
       <ul class="space-y-2 mt-2">

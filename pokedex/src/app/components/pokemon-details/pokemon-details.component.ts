@@ -30,6 +30,7 @@ export class PokemonDetailsComponent implements OnInit, OnDestroy {
 
   showMosse(): void {
     this.mosse = !this.mosse;
+    window.scrollTo(0, document.body.scrollHeight / 2);
   }
 
   goToTop(): void {
