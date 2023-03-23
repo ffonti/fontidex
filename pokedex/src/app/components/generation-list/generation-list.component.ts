@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { ChangeRouteService } from 'src/app/services/change-route.service';
 import { SearchPokemonService } from 'src/app/services/search-pokemon.service';
 
 @Component({
@@ -8,28 +10,34 @@ import { SearchPokemonService } from 'src/app/services/search-pokemon.service';
 })
 export class GenerationListComponent {
   gen: number = 0;
-  isGen: boolean = false;
   msg: string = 'Inserire una generazione!';
-  // pokemon: any;
+  pokemons: any;
+  pokemon: any;
 
-  constructor(private searchPokemonService: SearchPokemonService) {}
+  constructor(
+    private searchPokemonService: SearchPokemonService,
+    private changeRouteService: ChangeRouteService,
+    private router: Router
+  ) {}
 
   onChange(value: number) {
-    this.isGen = value !== 0;
+    this.gen = value;
     if (!value) {
-      console.log('oooo no 0');
+      this.gen = 0;
     } else {
-      this.searchPokemonService.getGeneration(value).subscribe(
-        (pkmn) => {
-          console.log(pkmn);
-
-          // this.pokemon = pkmn.body;
-          // this.loadingDone = true;
-        },
-        (err) => {
-          // this.msg = 'Inserire un nome valido!';
-        }
-      );
+      this.searchPokemonService.getGeneration(value).subscribe((pkmn) => {
+        this.pokemons = pkmn.body.pokemon_species;
+      });
     }
+  }
+
+  pokemonId(nome: string) {
+    this.pokemon = this.searchPokemonService
+      .getPokemon(nome)
+      .subscribe((pkmn) => {
+        this.pokemon = pkmn.body;
+        this.changeRouteService.setPokemon(this.pokemon);
+        this.router.navigateByUrl('/details/' + this.pokemon.id);
+      });
   }
 }

@@ -21,10 +21,19 @@
       <option [ngValue]="9">9</option>
     </select>
   </div>
-  <!-- <ng-container *ngIf="isGen; else notGen">
-    <div>{{ gen }}</div>
-  </ng-container> -->
-  <ng-container #notGen>
-    <app-alert [msg]="msg" />
+  <ng-container *ngIf="gen !== 0; else notGen">
+    <div class="grid grid-cols-8 mt-5 text-end mr-20">
+      <ng-container *ngFor="let pokemon of pokemons; let i = index">
+        <p
+          class="col-span-1 mt-3 cursor-pointer"
+          (click)="pokemonId(pokemon.name)"
+        >
+          {{ pokemon.name.replace("-", " ") | titlecase }} #{{ i }}
+        </p>
+      </ng-container>
+    </div>
   </ng-container>
+  <ng-template #notGen>
+    <app-alert [msg]="msg"></app-alert>
+  </ng-template>
 </div>
