@@ -9,6 +9,7 @@ import { ChangeRouteService } from 'src/app/services/change-route.service';
 })
 export class PokemonDetailsComponent implements OnInit, OnDestroy {
   pokemon: any;
+  mosse: boolean = false;
 
   constructor(
     private changeRouteService: ChangeRouteService,
@@ -21,6 +22,17 @@ export class PokemonDetailsComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.pokemon = this.changeRouteService.pokemon;
+    if (!this.pokemon) {
+      this.router.navigateByUrl('/homePage');
+    }
     this.changeRouteService.isDetailPage = true;
+  }
+
+  showMosse(): void {
+    this.mosse = !this.mosse;
+  }
+
+  goToTop(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 }

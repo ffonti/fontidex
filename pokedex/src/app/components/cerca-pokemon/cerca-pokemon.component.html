@@ -36,13 +36,13 @@
         <h5
           class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-black"
         >
-          {{ pokemon.name | titlecase }}
+          {{ pokemon.name.replace("-", " ") | titlecase }}
         </h5>
         <p
           class="font-normal text-gray-700 dark:text-gray-400 uppercase"
           *ngFor="let type of pokemon.types"
         >
-          {{ type.type.name }}
+          {{ type.type.name.replace("-", " ") }}
         </p>
       </div>
     </div>
@@ -55,7 +55,7 @@
             <p
               class="mb-2 text-l font-bold tracking-tight text-gray-900 dark:text-black inline"
             >
-              {{ stat.stat.name | titlecase }}
+              {{ stat.stat.name.replace("-", " ") | titlecase }}
             </p>
             <p
               class="ml-3 mb-2 text-l tracking-tight text-gray-900 dark:text-black inline"
@@ -70,7 +70,7 @@
   </div>
   <div class="mt-5">
     <p class="text-center">
-      (Mini tip pt.2: clicca sull'immagine di {{ pokemon.name | titlecase }} per
+      (Mini tip pt.2: clicca sull'immagine di {{ pokemon.name.replace("-", " ") | titlecase }} per
       più dettagli)
     </p>
   </div>

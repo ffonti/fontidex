@@ -2,6 +2,16 @@
   margin-left: 20%;
   margin-right: 20%;
 }
+
+.btn {
+  @apply font-bold py-2 px-4 rounded text-white w-80;
+  background-color: #312e91;
+}
+
+.btn:hover {
+  @apply bg-blue-800;
+}
+
 @media (max-width: 1080px) {
   #main {
     margin-left: 10%;

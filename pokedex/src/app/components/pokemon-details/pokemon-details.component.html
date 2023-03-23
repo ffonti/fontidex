@@ -6,13 +6,17 @@
     altezza
     peso
     mosse apprese (salendo di livello)
-    stats: hp, attack, defense, special-attack, special-defense, speed
+    OK stats: hp, attack, defense, special-attack, special-defense, speed
     tipi
  -->
 
-<div>
+<!-- come centrare gli sprites?
+come centrare due card quando non ce ne sono 4?
+non mi prende gli spazi laterali in % -->
+
+<ng-container *ngIf="pokemon" name="top">
   <h1 class="text-3xl font-bold text-center mt-5">
-    {{ pokemon.name | titlecase }} #{{ pokemon.id }}
+    {{ pokemon.name.replace("-", " ") | titlecase }} #{{ pokemon.id }}
   </h1>
   <div class="justify-items-center mt-5 space-x-5 grid grid-cols-4">
     <ng-container *ngIf="pokemon.sprites.front_default">
@@ -88,4 +92,97 @@
       </div>
     </ng-container>
   </div>
-</div>
+  <div class="grid grid-cols-2 space-x-5 mt-5">
+    <div
+      class="w-64 bg-white border-gray-200 rounded-lg shadow justify-self-end"
+    >
+      <ul>
+        <li class="text-end mr-5 mt-3">
+          <p
+            class="mb-2 text-l font-bold tracking-tight text-gray-900 dark:text-black inline"
+          >
+            {{ pokemon.types.length === 1 ? "Tipo" : "Tipi" }}
+          </p>
+          <p
+            class="font-normal text-gray-700 dark:text-gray-400 uppercase"
+            *ngFor="let type of pokemon.types"
+          >
+            {{ type.type.name.replace("-", " ") }}
+          </p>
+        </li>
+        <li class="text-end mr-5 mt-3">
+          <p
+            class="mb-2 text-l font-bold tracking-tight text-gray-900 dark:text-black inline"
+          >
+            Abitlità
+          </p>
+          <p
+            class="ml-3 mb-2 text-l tracking-tight text-gray-900 dark:text-black inline"
+          >
+            {{
+              pokemon.abilities[0].ability.name.replace("-", " ") | titlecase
+            }}
+          </p>
+        </li>
+        <li class="text-end mr-5 mt-3">
+          <p
+            class="mb-2 text-l font-bold tracking-tight text-gray-900 dark:text-black inline"
+          >
+            Altezza
+          </p>
+          <p
+            class="ml-3 mb-2 text-l tracking-tight text-gray-900 dark:text-black inline"
+          >
+            {{ pokemon.height / 10 }}m
+          </p>
+        </li>
+        <li class="text-end mr-5 mt-3">
+          <p
+            class="mb-2 text-l font-bold tracking-tight text-gray-900 dark:text-black inline"
+          >
+            Peso
+          </p>
+          <p
+            class="ml-3 mb-2 text-l tracking-tight text-gray-900 dark:text-black inline"
+          >
+            {{ pokemon.weight / 10 }}kg
+          </p>
+        </li>
+      </ul>
+    </div>
+    <div class="max-w-sm bg-white border-gray-200 rounded-lg shadow w-64">
+      <ul>
+        <div *ngFor="let stat of pokemon.stats">
+          <li class="text-end mr-5 mt-2">
+            <p
+              class="mb-2 text-l font-bold tracking-tight text-gray-900 dark:text-black inline"
+            >
+              {{ stat.stat.name.replace("-", " ") | titlecase }}
+            </p>
+            <p
+              class="ml-3 mb-2 text-l tracking-tight text-gray-900 dark:text-black inline"
+            >
+              {{ stat.base_stat }}
+            </p>
+          </li>
+        </div>
+      </ul>
+      <br *ngIf="pokemon.types.length === 1" />
+    </div>
+  </div>
+  <div class="text-center mt-5">
+    <button (click)="showMosse()" class="btn">
+      Mosse apprese salendo di livello
+    </button>
+    <ng-container *ngIf="mosse">
+      <ul class="space-y-2 mt-2">
+        <ng-container *ngFor="let move of pokemon.moves">
+          <li>{{ move.move.name.replace("-", " ") | titlecase }}</li>
+        </ng-container>
+      </ul>
+    </ng-container>
+    <ng-container *ngIf="mosse">
+      <button class="mt-2 btn" (click)="goToTop()">Torna su</button>
+    </ng-container>
+  </div>
+</ng-container>
